@@ -110,10 +110,10 @@ RRBotHardwareInterface::export_command_interfaces()
   }
 
   size_t i = 0;
-  for (const auto & command_itf : info_.sensors[0].command_interfaces)
+  for (const auto & command_itf : info_.gpios[0].command_interfaces)
   {
     command_interfaces.emplace_back(hardware_interface::CommandInterface(
-      info_.sensors[0].name, command_itf.name, &gpio_states_[i]));
+      info_.gpios[0].name, command_itf.name, &gpio_states_[i]));
     ++i;
   }
 
